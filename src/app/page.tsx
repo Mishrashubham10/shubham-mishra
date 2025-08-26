@@ -1,0 +1,44 @@
+import { Button } from '@/components/ui/button';
+import { Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
+
+export default function Home() {
+  return (
+    <div className="grid md:grid-cols-2 place-items-center min-h-screen px-4 md:px-16 lg:px-32 py-6 mx-auto">
+      <div className="text-left md:text-left max-w-[100%] px-4">
+        <h1 className="text-5xl font-bold uppercase tracking-widest">
+          I&apos;m Shubham Mishra.
+        </h1>
+        <h3 className="text-4xl uppercase font-semibold">
+          Frontend Developer based in India.
+        </h3>
+        <p className="max-w-md mt-4 md:mt-6">
+          I&apos;m probably the most passionate developer you&apos;ll ever get to work
+          with. If you have a great project that needs some amazing skills, I&apos;m
+          your guy.
+        </p>
+
+        {/* =========== CONNECTION =========== */}
+        <div className="mt-12 flex flex-col items-start sm:flex-row sm:items-center gap-4">
+          <Button variant="outline" size="lg">
+            <Linkedin />
+            Let&apos;s Connect on Linkedin
+          </Button>
+          <Button variant="outline" size="lg">
+            <Mail />
+            Or Send Me an Email
+          </Button>
+        </div>
+      </div>
+      <div className="py-6 px-8 bg-accent rounded-md shadow-lg mt-8 md:mt-0">
+        <Image
+          src="https://cdn.pixabay.com/photo/2023/07/04/19/43/man-8106958_1280.png"
+          height={400}
+          width={400}
+          alt="This is hero image"
+          className="object-cover rounded-sm"
+        />
+      </div>
+    </div>
+  );
+}
