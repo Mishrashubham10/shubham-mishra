@@ -3,7 +3,7 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 
 const outfitSans = Outfit({
   variable: '--font-outfit-sans',
@@ -30,8 +30,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <main className='min-h-screen'>{children}</main>
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>
