@@ -19,8 +19,8 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full z-50 flex justify-center py-4">
-      <nav className="mt-5 flex items-center justify-between flex-wrap w-[90%] max-w-5xl my-0 mx-auto md:rounded-full bg-accent py-4 px-4">
+    <header className="w-full z-50">
+      <nav className="mt-5 flex items-center justify-between flex-wrap w-[90%] max-w-5xl my-0 mx-auto md:rounded-full bg-accent py-2 px-4">
         <h2 className="text-accent-foreground font-semibold text-xl">
           <Link href="/">Shubham.dev</Link>
         </h2>
