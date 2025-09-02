@@ -3,7 +3,7 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
-// import Footer from '@/components/Footer';
+import Footer from '@/components/Footer';
 
 const outfitSans = Outfit({
   variable: '--font-outfit-sans',
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfitSans.variable} antialiased font-sans`}>
+      <body className={`${outfitSans.variable} antialiased font-sans min-h-screen flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -30,10 +30,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className='h-[100%] border-[1px] border-red-600'>
+          <main className='flex-1 bg-background'>
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

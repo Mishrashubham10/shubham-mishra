@@ -1,86 +1,30 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-
 export default function ProjectPage() {
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-accent-foreground">
-        <div className="flex items-center gap-6 bg-card/80 backdrop-blur-sm border border-border rounded-full px-6 py-3 shadow-lg">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-accent transition-colors p-2"
-            aria-label="GitHub"
-          >
-            <Github size={24} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-accent transition-colors p-2"
-            aria-label="LinkedIn"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-accent transition-colors p-2"
-            aria-label="Twitter"
-          >
-            <Twitter size={24} />
-          </a>
-          <a
-            href="mailto:hello@example.com"
-            className="text-muted-foreground hover:text-accent transition-colors p-2"
-            aria-label="Email"
-          >
-            <Mail size={24} />
+    <section id="projects" className="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+      <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-2">📚 BookStore App</h3>
+          <p className="mb-4">
+            A full-stack MERN application where users can browse, purchase, and
+            manage books. Built with React, Node.js, Express, and MongoDB.
+          </p>
+          <a href="#" className="text-blue-600 hover:underline">
+            View Project
           </a>
         </div>
 
-        {/* ========= HERO SECTIONS LINK ============ */}
-        <section className="bg-background flex items-center justify-center">
-          <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="flex items-center gap-6 bg-card/80 backdrop-blur-sm border border-border rounded-full px-6 py-3 shadow-lg">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors p-2"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors p-2"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors p-2"
-                aria-label="Twitter"
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="mailto:hello@example.com"
-                className="text-muted-foreground hover:text-accent transition-colors p-2"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
-            </div>
-          </div>
-        </section>
+        <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-2">🛒 E-Commerce Platform</h3>
+          <p className="mb-4">
+            An online store with authentication, product filtering, and a
+            shopping cart. Developed with Next.js, Tailwind, and MongoDB.
+          </p>
+          <a href="#" className="text-blue-600 hover:underline">
+            View Project
+          </a>
+        </div>
       </div>
-  )
+    </section>
+  );
 }

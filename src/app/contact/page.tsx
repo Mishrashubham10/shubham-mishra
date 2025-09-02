@@ -1,70 +1,71 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+'use client';
 
 export default function ContactPage() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className="h-screen w-full flex items-center justify-center">
-      <form
-        method="POST"
-        action="https://formsubmit.co/shubhammishra10101998@gmail.com"
-        encType="multipart/form-data"
-        className="mx-auto text-accent-foreground"
-      >
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            required
-            className="px-3 py-2 border border-gray-300 rounded-md outline-none"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            required
-            className="p-4 border border-gray-300 rounded-md outline-none"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor={'message'}
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Details of your problem"
-            rows={4}
-            required
-            className="px-3 py-2 border border-gray-300 rounded-md outline-none"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200"
+    <section
+      id="contact"
+      className="w-full max-w-5xl mx-auto h-[calc(100vh-4rem)] overflow-hidden"
+    >
+      <div className="h-screen bg-background flex flex-col items-center justify-center px-4 md:px-16 lg:px-32">
+        <h1>Get in Touch</h1>
+        <p>
+          Whether you&apos;re interested in collaborating, have some questions,
+          or just want to say hello — I&apos;m all ears! Drop your message
+          below, and I&apos;ll get back to you as soon as possible. Rest
+          assured, your privacy is important to me, and I&apos;ll never misuse
+          your information. It&apos;s just me, ready to help, so don&apos;t
+          hesitate to reach out!
+        </p>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-3 mt-6 w-full"
         >
-          Send Test
-        </button>
-      </form>
-    </div>
+          {/* ========= NAME ========== */}
+          <div className="flex flex-col gap-[2px]">
+            <label htmlFor="name" className="text-sm tracking-tight">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
+            />
+          </div>
+          {/* ========= EMAIL ========== */}
+          <div className="flex flex-col gap-[2px]">
+            <label htmlFor="email" className="text-sm tracking-tight">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
+            />
+          </div>
+          {/* ========= MESSAGE ========== */}
+          <div className="flex flex-col gap-[2px]">
+            <label htmlFor="message" className="text-sm tracking-tight">
+              Project / Message
+            </label>
+            <textarea
+              name="message"
+              id=""
+              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
+              placeholder="Write your thoughts here..."
+            ></textarea>
+          </div>
+          {/* =========== BUTTON ========== */}
+          <div className="flex items-center justify-center md:justify-end mt-2 mr-4 w-full">
+            <button className="py-2 px-6 bg-primary w-full rounded-md text-foreground font-normal text-md tracking-tight cursor-pointer shadow-lg">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 }
