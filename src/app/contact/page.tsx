@@ -8,11 +8,11 @@ export default function ContactPage() {
   return (
     <section
       id="contact"
-      className="w-full max-w-5xl mx-auto h-[calc(100vh-4rem)] overflow-hidden"
+      className="w-full max-w-5xl mx-auto overflow-hidden"
     >
       <div className="h-screen bg-background flex flex-col items-center justify-center px-4 md:px-16 lg:px-32">
-        <h1>Get in Touch</h1>
-        <p>
+        <h1 className="text-2xl md:text-3xl font-stretch-semi-condensed">Get in Touch</h1>
+        <p className="text-md mt-2">
           Whether you&apos;re interested in collaborating, have some questions,
           or just want to say hello — I&apos;m all ears! Drop your message
           below, and I&apos;ll get back to you as soon as possible. Rest

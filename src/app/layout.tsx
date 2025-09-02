@@ -3,7 +3,7 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 
 const outfitSans = Outfit({
   variable: '--font-outfit-sans',
@@ -33,7 +33,7 @@ export default function RootLayout({
           <main className='flex-1 bg-background'>
             {children}
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>

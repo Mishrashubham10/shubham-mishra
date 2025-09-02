@@ -26,18 +26,18 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full max-h-[calc(100vh-4rem)] overflow-auto overflow-x-hidden">
+    <main className="w-full overflow-hidden py-20">
       <section className="h-screen flex items-center justify-center text-accent">
         <div className="flex flex-col items-center justify-center gap-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-2xl md:text-4xl font-semibold">
             Hi!, I&apos;m Shubham Mishra 👋
           </h1>
 
-          <div className="flex items-center flex-col gap-4 mt-2">
-            <h2 className="text-7xl font-bold tracking-wide text-center">
+          <div className="flex items-center flex-col gap-4">
+            <h2 className="text-4xl md:text-7xl font-bold tracking-wide text-center">
               Frontend web developer based in mumbai.
             </h2>
-            <p className="font-normal tracking-tighter text-center text-2xl">
+            <p className="font-normal tracking-tighter text-center text-lg md:text-2xl">
               I&apos;m a frontend developer from Mumbai, India with 1.5 years of
               industry working experience and 1 years of freelancing experience.
             </p>
@@ -52,10 +52,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Me Section */}
+      {/* ============= About Me Section =========== */}
       <section
         id="about"
-        className="min-h-screen flex items-center justify-center bg-background text-accent opacity-0 translate-y-10 transition-all duration-700"
+        className="min-h-screen flex items-center justify-center bg-background text-accent opacity-0 translate-y-10 transition-all duration-700 max-w-5xl mx-auto"
       >
         <About />
       </section>

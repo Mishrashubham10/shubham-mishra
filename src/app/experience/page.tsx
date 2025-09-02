@@ -1,8 +1,8 @@
 export default function ExperiencePage() {
   return (
-    <section className="w-full h-[calc(100vh-4rem)] overflow-hidden">
+    <section className="w-full">
       <div className="bg-background h-screen flex flex-col items-center justify-center">
-        <main className="container mx-auto px-4 py-12">
+        <main className="container mx-auto px-4">
           <section className="max-w-4xl mx-auto">
             <h1 className="text-3xl font-bold text-foreground mb-8">
               Experience

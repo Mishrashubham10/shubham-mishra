@@ -35,10 +35,10 @@ export default function ProjectPage() {
   ];
 
   return (
-    <div className="w-full max-h-[calc(100vh-4rem)] overflow-auto py-10">
+    <div className="w-full overflow-auto">
       <section
         id="projects"
-        className="h-screen py-10 px-6 flex flex-col gap-6 items-center justify-center bg-gray-100 dark:bg-gray-900"
+        className="h-screen py-10 px-6 flex flex-col gap-6 items-center justify-center bg-gray-100 dark:bg-gray-900 border-1 border-red-400"
       >
         <h2 className="text-3xl font-bold text-start self-start md:self-center">
           Professional Projects
