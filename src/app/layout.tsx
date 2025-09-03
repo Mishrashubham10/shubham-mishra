@@ -11,7 +11,7 @@ const outfitSans = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Job Prep App',
+  title: 'Shubham Mishra',
   description: 'Created by Shubham Mishra',
 };
 

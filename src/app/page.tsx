@@ -55,7 +55,7 @@ export default function Home() {
       {/* ============= About Me Section =========== */}
       <section
         id="about"
-        className="min-h-screen flex items-center justify-center bg-background text-accent opacity-0 translate-y-10 transition-all duration-700 max-w-5xl mx-auto"
+        className="min-h-screen flex items-center justify-center bg-background text-accent opacity-0 translate-y-10 transition-all duration-700 max-w-5xl mx-auto overflow-hidden"
       >
         <About />
       </section>

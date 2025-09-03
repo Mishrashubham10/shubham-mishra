@@ -1,15 +1,15 @@
 export default function ExperiencePage() {
   return (
-    <section className="w-full">
-      <div className="bg-background h-screen flex flex-col items-center justify-center">
+    <section className="w-full py-6">
+      <div className="bg-background mt-8 flex flex-col items-center justify-center">
         <main className="container mx-auto px-4">
-          <section className="max-w-4xl mx-auto">
+          <section className="max-w-5xl mx-auto">
             <h1 className="text-3xl font-bold text-foreground mb-8">
               Experience
             </h1>
 
             <div className="space-y-8">
-              {/* IGNICULUSS Experience */}
+              {/* ========= IGNICULUSS Experience ========= */}
               <div className="border-l-4 border-primary pl-6 pb-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                   <div>
@@ -39,7 +39,7 @@ export default function ExperiencePage() {
                 </div>
               </div>
 
-              {/* BookmyInsurance Experience */}
+              {/* ========= BookmyInsurance Experience ========= */}
               <div className="border-l-4 border-primary pl-6 pb-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                   <div>

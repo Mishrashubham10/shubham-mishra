@@ -8,7 +8,7 @@ export default function About() {
 
       {/* ========= INFORMATION ========== */}
       <div className="flex flex-col items-center justify-center w-full max-w-3xl mx-auto gap-6 mt-3">
-        <p className="text-lg font-semibold text-balance tracking-wide">
+        <p className="text-lg font-semibold text-center md:text-balance tracking-wide">
           I am an experienced Frontend Developer with over 1 and half years of
           professional expertise in the field. Throughout my career, I have had
           the privilage of collaborating with prestigious organizations,
