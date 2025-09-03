@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfitSans.variable} antialiased font-sans min-h-screen flex flex-col`}>
+      <body className={`${outfitSans.variable} antialiased font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -30,7 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className='flex-1 bg-background'>
+          <main>
             {children}
           </main>
           {/* <Footer /> */}

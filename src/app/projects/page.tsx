@@ -35,49 +35,49 @@ export default function ProjectPage() {
   ];
 
   return (
-    <div className="w-full overflow-auto">
-      <section
-        id="projects"
-        className="h-screen py-10 px-6 flex flex-col gap-6 items-center justify-center bg-gray-100 dark:bg-gray-900 border-1 border-red-400"
-      >
-        <h2 className="text-3xl font-bold text-start self-start md:self-center">
+    <section className="py-8 min-h-screen px-4 md:px-16 lg:px-32 flex flex-col gap-6">
+      <div className="py-2 px-4 bg-card rounded-lg shadow-lg">
+        <h4 className="text-card-foreground text-lg font-bold tracking-wide">
+          Continuously Evolving
+        </h4>
+        <p className="text-md text-card-foreground">
+          I&apos;m actively updating and improving this section. Check back
+          often for the latest additions and refinements.
+        </p>
+      </div>
+      <div className="flex flex-col gap-6 items-center">
+        <h2 className="text-4xl font-bold text-start self-start md:self-center">
           Professional Projects
         </h2>
-        <p>
-          Here&apos;s a selection of the projects I&apos;ve built or contributed to —
-          spanning web, mobile, and open-source tools. Each one reflects my
+        <p className="text-md break-words">
+          Here&apos;s a selection of the projects I&apos;ve built or contributed
+          to — spanning web, mobile, and open-source tools. Each one reflects my
           focus on performance, design, and problem-solving. Explore the
           collection below — each project includes real-world challenges,
           polished interfaces, and thoughtful implementations.
         </p>
-
-        <div className="grid md:grid-cols-3 gap-4">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="p-6 bg-background flex flex-col gap-6 border-1 border-foreground rounded-xl shadow-lg"
+      </div>
+      <div className="grid md:grid-cols-2 gap-4">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="p-6 bg-background flex flex-col gap-6 border-1 border-foreground rounded-xl shadow-lg"
+          >
+            <h3 className="text-xl font-bold">📚 {project.title}</h3>
+            <p
+              className="break-words"
             >
-              <h3 className="text-xl font-bold mb-2">📚 {project.title}</h3>
-              <p
-                className="break-words"
-                style={{
-                  display: '-webkit-box',
-                  WebkitLineClamp: 3,
-                  WebkitBoxOrient: 'vertical',
-                }}
-              >
-                {project.content}
-              </p>
-              <Link
-                href="/projects"
-                className="py-2 px-6 w-max rounded-md text-foreground font-normal text-md tracking-tight cursor-pointer shadow-lg border-[0.3px] border-foreground mt-2"
-              >
-                View Project
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+              {project.content}
+            </p>
+            <Link
+              href="/projects"
+              className="py-2 px-6 w-max rounded-md text-foreground font-normal text-md tracking-tight cursor-pointer shadow-lg border-[0.3px] border-foreground mt-2"
+            >
+              View Project
+            </Link>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

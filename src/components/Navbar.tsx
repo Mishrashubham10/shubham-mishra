@@ -21,14 +21,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full fixed top-0 z-50 shadow-md">
+    <header className="w-full shadow-md">
       <nav className="bg-background text-foreground flex items-center justify-between flex-wrap h-16 px-4 md:px-16 lg:px-32 transition-colors duration-300">
-        {/* Logo */}
+        {/* =========== Logo =========== */}
         <h2 className="text-accent font-bold text-2xl">
           <Link href="/">Shubham.dev</Link>
         </h2>
 
-        {/* Desktop Menu */}
+        {/* =========== Desktop Menu =========== */}
         <ul className="hidden md:flex gap-6 uppercase items-center text-foreground">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -50,7 +50,7 @@ export default function Navbar() {
           </div>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* =========== Mobile Menu Button =========== */}
         <Button
           asChild
           size="icon"
@@ -63,7 +63,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <ul className="absolute top-full left-0 w-full bg-background flex flex-col gap-2 p-4 shadow-lg md:hidden transition-colors duration-300">
+          <ul className="absolute top-15 left-0 w-full bg-background flex flex-col gap-2 p-4 shadow-lg md:hidden transition-colors duration-300">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
