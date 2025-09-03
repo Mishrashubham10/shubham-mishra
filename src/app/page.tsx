@@ -26,8 +26,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full overflow-hidden py-20">
-      <section className="h-screen flex items-center justify-center text-accent">
+    <main className="w-full overflow-hidden py-4">
+      <section className="min-h-screen flex items-center justify-center text-accent overflow-hidden">
         <div className="flex flex-col items-center justify-center gap-4 max-w-4xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-semibold">
             Hi!, I&apos;m Shubham Mishra 👋

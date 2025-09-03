@@ -8,9 +8,8 @@ export default function ContactPage() {
   return (
     <section
       id="contact"
-      className="w-full max-w-5xl mx-auto overflow-hidden"
+      className="w-full max-w-5xl mx-auto overflow-hidden bg-background flex flex-col items-center justify-center px-4 md:px-16 lg:px-32 mt-8"
     >
-      <div className="h-screen bg-background flex flex-col items-center justify-center px-4 md:px-16 lg:px-32">
         <h1 className="text-2xl md:text-3xl font-stretch-semi-condensed">Get in Touch</h1>
         <p className="text-md mt-2">
           Whether you&apos;re interested in collaborating, have some questions,
@@ -65,7 +64,6 @@ export default function ContactPage() {
             <button className="py-2 px-6 bg-primary w-full rounded-md text-foreground font-normal text-md tracking-tight cursor-pointer shadow-lg">Send Message</button>
           </div>
         </form>
-      </div>
     </section>
   );
 }
