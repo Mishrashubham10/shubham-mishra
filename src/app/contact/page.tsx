@@ -1,69 +1,164 @@
-'use client';
+"use client";
 
-export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+
+const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
   };
 
   return (
-    <section
-      id="contact"
-      className="w-full max-w-5xl mx-auto overflow-hidden bg-background flex flex-col items-center justify-center px-4 md:px-16 lg:px-32 mt-8"
-    >
-        <h1 className="text-2xl md:text-3xl font-stretch-semi-condensed">Get in Touch</h1>
-        <p className="text-md mt-2">
-          Whether you&apos;re interested in collaborating, have some questions,
-          or just want to say hello — I&apos;m all ears! Drop your message
-          below, and I&apos;ll get back to you as soon as possible. Rest
-          assured, your privacy is important to me, and I&apos;ll never misuse
-          your information. It&apos;s just me, ready to help, so don&apos;t
-          hesitate to reach out!
-        </p>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-3 mt-6 w-full"
+    <section className="py-24 px-4 bg-secondary/20 min-h-screen flex items-center">
+      <div className="container mx-auto max-w-4xl w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          {/* ========= NAME ========== */}
-          <div className="flex flex-col gap-[2px]">
-            <label htmlFor="name" className="text-sm tracking-tight">
-              Name
-            </label>
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
-            />
-          </div>
-          {/* ========= EMAIL ========== */}
-          <div className="flex flex-col gap-[2px]">
-            <label htmlFor="email" className="text-sm tracking-tight">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
-            />
-          </div>
-          {/* ========= MESSAGE ========== */}
-          <div className="flex flex-col gap-[2px]">
-            <label htmlFor="message" className="text-sm tracking-tight">
-              Project / Message
-            </label>
-            <textarea
-              name="message"
-              id=""
-              className="outline-none border-1 border-gray-500 py-2 px-4 rounded-md hover:border-primary"
-              placeholder="Write your thoughts here..."
-            ></textarea>
-          </div>
-          {/* =========== BUTTON ========== */}
-          <div className="flex items-center justify-center md:justify-end mt-2 mr-4 w-full">
-            <button className="py-2 px-6 bg-primary w-full rounded-md text-foreground font-normal text-md tracking-tight cursor-pointer shadow-lg">Send Message</button>
-          </div>
-        </form>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+          <p className="text-muted-foreground text-lg">
+            Let&apos;s discuss your next project
+          </p>
+        </motion.div>
+
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid md:grid-cols-2 gap-8"
+        >
+          <motion.div variants={itemVariants}>
+            <Card className="p-8 space-y-6 h-full">
+              <h3 className="text-2xl font-semibold mb-6">
+                Contact Information
+              </h3>
+
+              <div className="space-y-4">
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="p-3 rounded-lg bg-primary/20">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a
+                      href="mailto:shubhdev101@gmail.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      shubhdev101@gmaili.com
+                    </a>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="p-3 rounded-lg bg-primary/20">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href="tel:+1234567890"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      +91 7400203430
+                    </a>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="p-3 rounded-lg bg-primary/20">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Location</p>
+                    <p className="text-muted-foreground">India</p>
+                  </div>
+                </motion.div>
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <Card className="p-8 h-full">
+              <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    placeholder="Your Message"
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none transition-colors resize-none"
+                  />
+                </div>
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
+                  >
+                    Send Message
+                  </Button>
+                </motion.div>
+              </form>
+            </Card>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
-}
+};
+
+export default Contact;

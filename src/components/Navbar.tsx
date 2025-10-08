@@ -1,91 +1,114 @@
 'use client';
 
-import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { useState } from 'react';
-import { Button } from './ui/button';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-export default function Navbar() {
-  const pathname = usePathname();
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Skills', path: '/skills' },
+  { name: 'Experience', path: '/experience' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Contact', path: '/contact' },
+];
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname(); // ✅ use Next.js hook here
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    // { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Experience', href: '/experience' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="w-full shadow-md">
-      <nav className="bg-background text-foreground flex items-center justify-between flex-wrap h-16 px-4 md:px-16 lg:px-32 transition-colors duration-300">
-        {/* =========== Logo =========== */}
-        <h2 className="text-accent font-bold text-2xl">
-          <Link href="/">Shubham.dev</Link>
-        </h2>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-background/80 backdrop-blur-lg border-b border-border'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-xl font-bold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+              SM
+            </span>
+          </Link>
 
-        {/* =========== Desktop Menu =========== */}
-        <ul className="hidden md:flex gap-6 uppercase items-center text-foreground">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={cn(
-                  'px-3 py-2 rounded-md transition-colors duration-200',
-                  pathname === item.href
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-muted hover:text-foreground'
-                )}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-          <div className="ml-4">
-            <ThemeToggle />
-          </div>
-        </ul>
-
-        {/* =========== Mobile Menu Button =========== */}
-        <Button
-          asChild
-          size="icon"
-          variant="outline"
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden border-foreground text-foreground"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <ul className="absolute top-15 left-0 w-full bg-background flex flex-col gap-2 p-4 shadow-lg md:hidden transition-colors duration-300">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'block px-4 py-2 rounded-md transition-colors duration-200',
-                    pathname === item.href
-                      ? 'bg-primary text-primary-foreground'
-                      : 'hover:bg-muted hover:text-foreground'
-                  )}
-                  onClick={() => setIsOpen(false)}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link key={link.path} href={link.path} className="relative group">
+                <span
+                  className={`transition-colors ${
+                    pathname === link.path
+                      ? 'text-primary'
+                      : 'text-foreground hover:text-primary'
+                  }`}
                 >
-                  {item.name}
-                </Link>
-              </li>
+                  {link.name}
+                </span>
+                {pathname === link.path && (
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
             ))}
-            <div className="mt-2">
-              <ThemeToggle />
-            </div>
-          </ul>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden pb-4"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`block py-3 px-4 rounded-lg transition-colors ${
+                  pathname === link.path
+                    ? 'bg-primary/20 text-primary'
+                    : 'hover:bg-secondary'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
         )}
-      </nav>
-    </header>
+      </div>
+    </motion.nav>
   );
-}
+};
+
+export default Navbar;
