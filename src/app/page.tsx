@@ -1,11 +1,14 @@
-import About from "../components/sections/About";
-import Hero from '@/components/sections/Hero';
+import { Hero } from '@/components/sections/Hero';
+import { portfolio } from '@/data/portfolio';
 
 export default function Home() {
-
   return (
     <main className="w-full py-16">
-      <Hero />
+      <Hero
+        profile={portfolio.profile}
+        products={portfolio.products}
+        learning={portfolio.learning}
+      />
 
       {/* ============= About Me Section =========== */}
       {/* <section

@@ -1,15 +1,16 @@
 import { DESIGN } from '@/constants/design';
 import { cn } from '@/lib/utils';
+import { ComponentProps } from 'react';
 
-type SectionProps = {
-  id?: string;
-  children: React.ReactNode;
-  className?: string;
-};
+type SectionProps = React.PropsWithChildren<ComponentProps<'section'>>;
 
-export function Section({ id, children, className }: SectionProps) {
+export function Section({ id, children, className, ...props }: SectionProps) {
   return (
-    <section id={id} className={cn(DESIGN.layout.section, className)}>
+    <section
+      id={id}
+      className={cn(DESIGN.layout.section, className)}
+      {...props}
+    >
       {children}
     </section>
   );

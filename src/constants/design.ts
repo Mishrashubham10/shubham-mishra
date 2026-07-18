@@ -1,7 +1,8 @@
 export const DESIGN = {
   layout: {
     container: 'mx-auto w-full max-w-7xl px-6 lg:px-8',
-    section: 'py-24 lg:py-32',
+    section: 'scroll-mt-24 py-28',
+    hero: "min-h-[calc(100vh-4rem)] flex items-center py-24"
   },
 
   typography: {
