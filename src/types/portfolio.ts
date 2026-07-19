@@ -27,7 +27,7 @@ export type CaseStudyStatus =
 
 export type LearningStatus = 'Planned' | 'Learning' | 'Completed';
 
-export type TechnologyCategory =
+export type Tools =
   | 'Language'
   | 'Frontend'
   | 'Backend'
@@ -57,7 +57,7 @@ export type SocialLink = {
 export type Technology = {
   id: string;
   name: string;
-  category: TechnologyCategory;
+  category: Tools;
   icon?: string;
   officialUrl?: string;
   featured?: boolean;
@@ -182,20 +182,30 @@ export type CareerExperience = {
   location: string;
   startDate: string;
   endDate: string | 'Present';
-  summary: string;
-  achievements: string[];
+  overview: string;
+  contributions: string[];
   technologies: Technology[];
 };
 
-export type CareerAchievement = {
+// export type CareerAchievement = {
+//   id: string;
+//   title: string;
+//   description: string;
+// };
+
+export type Education = {
   id: string;
-  title: string;
-  description: string;
+  degree: string;
+  institution: string;
+  location?: string;
+  startDate: string;
+  endDate: string;
 };
 
 export type Career = {
-  experience: CareerExperience[];
-  achievements: CareerAchievement[];
+  experiences: CareerExperience[];
+  // achievements: CareerAchievement[];
+  education: Education[];
 };
 
 // ======================================================
