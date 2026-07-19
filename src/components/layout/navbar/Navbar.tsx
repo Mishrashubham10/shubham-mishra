@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import { Menu } from 'lucide-react';
-
 import { portfolio } from '@/data/portfolio';
 import { AppButton, Container } from '@/components/common';
 import { Logo } from './Logo';
@@ -33,8 +31,12 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
 
-          <AppButton href={portfolio.profile.resumeUrl} download size="sm">
-            Resume
+          <AppButton
+            href={portfolio.profile.resumeUrl}
+            rel="noopener noreferrer"
+            size="sm"
+          >
+            View Resume
           </AppButton>
         </div>
 

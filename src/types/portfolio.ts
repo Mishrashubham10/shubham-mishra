@@ -129,6 +129,11 @@ export type Metadata = {
 // ======================================================
 // Profile
 // ======================================================
+export interface HeroContent {
+  badge: string;
+  headline: string;
+  description: string;
+}
 
 export type Profile = {
   name: string;
@@ -143,6 +148,8 @@ export type Profile = {
   yearsOfExperience: number;
   currentRole?: string;
   resumeUrl: string;
+
+  hero: HeroContent;
 };
 
 // ======================================================

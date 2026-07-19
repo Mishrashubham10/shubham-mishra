@@ -22,5 +22,15 @@ export const profile: Profile = {
 
   currentRole: 'Software Engineer',
 
-  resumeUrl: '/resume.pdf',
+  resumeUrl:
+    'https://drive.google.com/file/d/1u6Hd_gAMAxOdlqo-vStV0i7OAKpw22ib/view?usp=drive_link',
+
+  hero: {
+    badge: 'Available for Full-time Opportunities',
+
+    headline: 'Engineering software that solves real problems.',
+
+    description:
+      "I'm Shubham Mishra, a Software Engineer with 2+ years of experience building scalable web applications using React, Next.js, Node.js, TypeScript, and MongoDB.",
+  },
 };

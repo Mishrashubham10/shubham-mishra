@@ -1,4 +1,4 @@
-import { Hero } from '@/components/sections/Hero';
+import { Hero } from '@/components/sections/hero/Hero';
 import { portfolio } from '@/data/portfolio';
 
 export default function Home() {
