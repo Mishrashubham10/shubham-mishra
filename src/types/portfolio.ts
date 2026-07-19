@@ -135,6 +135,22 @@ export interface HeroContent {
   description: string;
 }
 
+export interface AboutContent {
+  title: string;
+  introduction: string;
+  philosophy: string;
+  currentFocus: string;
+}
+
+export interface TechItem {
+  name: string;
+}
+
+export interface TechCategory {
+  category: string;
+  items: TechItem[];
+}
+
 export type Profile = {
   name: string;
   headline: string;
@@ -150,6 +166,8 @@ export type Profile = {
   resumeUrl: string;
 
   hero: HeroContent;
+  about: AboutContent;
+  techStack: TechCategory[];
 };
 
 // ======================================================
