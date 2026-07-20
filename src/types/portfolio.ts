@@ -35,7 +35,7 @@ export type Tools =
   | 'DevOps'
   | 'Cloud'
   | 'Testing'
-  | 'Tool';
+  | 'Tools';
 
 // ======================================================
 // Shared Models
@@ -61,7 +61,7 @@ export type Technology = {
   icon?: string;
   officialUrl?: string;
   featured?: boolean;
-  experience?: string;
+  experience?: number;
 };
 
 export type Feature = {
@@ -211,13 +211,18 @@ export type Career = {
 // ======================================================
 // Products
 // ======================================================
+export type Outcome = {
+  id: string;
+  title: string;
+  description: string;
+};
 
 export type CaseStudy = {
   id: string;
   slug: string;
   title: string;
   status: CaseStudyStatus;
-  shortDescription: string;
+  tagline: string;
   overview: string;
   problem: string;
   solution: string;
@@ -229,6 +234,8 @@ export type CaseStudy = {
   roadmap: Milestone[];
   screenshots: Screenshot[];
   links: ProjectLink;
+
+  outcomes: Outcome[];
 };
 
 export type Products = {

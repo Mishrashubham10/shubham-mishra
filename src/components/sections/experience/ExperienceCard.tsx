@@ -8,6 +8,17 @@ type ExperienceCardProps = {
 };
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
+  console.group(`Experience: ${experience.company}`);
+
+  console.log('Experience Object:', experience);
+  console.log('Technologies:', experience.technologies);
+
+  experience.technologies.forEach((technology, index) => {
+    console.log(`Technology ${index}:`, technology);
+  });
+
+  console.groupEnd();
+
   return (
     <article className="rounded-2xl border bg-card p-8 transition-colors hover:border-primary/30">
       {/* Header */}
@@ -30,10 +41,6 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           <p className="font-medium">
             {experience.startDate} — {experience.endDate}
           </p>
-
-          {/* <p className="mt-1 text-sm text-muted-foreground">
-            {experience.location}
-          </p> */}
         </div>
       </header>
 
@@ -68,9 +75,22 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2">
-          {experience.technologies.map((technology) => (
-            <Chip key={technology.id}>{technology.name}</Chip>
-          ))}
+          {experience.technologies.map((technology, index) => {
+            if (!technology) {
+              console.error(
+                `❌ Technology at index ${index} is undefined`,
+                experience,
+              );
+
+              return (
+                <Chip key={index} variant="warning">
+                  Missing Technology
+                </Chip>
+              );
+            }
+
+            return <Chip key={technology.id}>{technology.name}</Chip>;
+          })}
         </div>
       </section>
     </article>

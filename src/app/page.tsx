@@ -1,6 +1,7 @@
 import { About } from '@/components/sections/about/About';
 import { Experience } from '@/components/sections/experience';
 import { Hero } from '@/components/sections/hero/Hero';
+import { Projects } from '@/components/sections/projects';
 import { portfolio } from '@/data/portfolio';
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* ============= EXP SECTION ============= */}
       <Experience career={portfolio.career} />
+
+      {/* ============= PROJECT SECTION ============= */}
+      <Projects />
     </main>
   );
 }
