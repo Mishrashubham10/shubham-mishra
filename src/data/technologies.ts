@@ -53,12 +53,13 @@ export const technologies = {
     experience: 2,
   },
 
-  rtkQuery: {
-    id: 'rtk-query',
-    name: 'RTK Query',
+
+  zustand: {
+    id: 'zustand',
+    name: 'Zustand',
     category: TechnologyCategory.Frontend,
-    officialUrl: 'https://redux-toolkit.js.org/rtk-query/overview',
-    experience: 2,
+    officialUrl: 'https://zustand.docs.pmnd.rs/',
+    experience: 1,
   },
 
   tailwind: {

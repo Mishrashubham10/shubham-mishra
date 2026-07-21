@@ -33,72 +33,55 @@ export const products: Products = {
         {
           id: 'room-system',
           title: 'Room-Based Multiplayer',
-
           description:
             'Players can create private rooms, share join codes, and participate in synchronized quiz sessions.',
-
           completed: true,
         },
 
         {
           id: 'leaderboard',
-
           title: 'Live Leaderboard',
-
           description:
             'Scores are calculated by the server and broadcast instantly to every participant.',
-
           completed: true,
         },
 
         {
           id: 'timers',
-
           title: 'Synchronized Timers',
-
           description:
             'Countdown timers remain synchronized across all connected clients.',
-
           completed: true,
         },
 
         {
           id: 'results',
-
           title: 'Persistent Results',
-
           description:
             'Quiz history and final results are stored using PostgreSQL and Prisma ORM.',
-
           completed: true,
         },
       ],
       challenges: [
         {
           id: 'timer-sync',
-
           problem:
             'Keeping countdown timers synchronized across every connected player.',
-
           solution:
             'Moved timer management entirely to the server and broadcast updates through Socket.IO.',
         },
 
         {
           id: 'duplicate-answers',
-
           problem:
             'Preventing players from submitting multiple answers for the same question.',
-
           solution:
             'Implemented server-side validation before accepting answer submissions.',
         },
 
         {
           id: 'room-cleanup',
-
           problem: 'Cleaning up inactive rooms and disconnected users.',
-
           solution:
             'Created automatic room lifecycle management triggered by socket events.',
         },
@@ -106,27 +89,21 @@ export const products: Products = {
       learnings: [
         {
           id: 'architecture',
-
           title: 'Event-Driven Architecture',
-
           description:
             'Learned how to design applications around events instead of request-response communication.',
         },
 
         {
           id: 'state',
-
           title: 'Server-Authoritative Systems',
-
           description:
             'Gained experience building multiplayer systems with the server acting as the single source of truth.',
         },
 
         {
           id: 'deployment',
-
           title: 'Production Deployment',
-
           description:
             'Learned to deploy WebSocket applications across independent frontend and backend services.',
         },
@@ -134,52 +111,36 @@ export const products: Products = {
       roadmap: [
         {
           id: 'auth',
-
           version: 'v2',
-
           title: 'User Authentication',
-
           description:
             'Allow players to create persistent accounts and track quiz history.',
-
           completed: false,
         },
 
         {
           id: 'friends',
-
           version: 'v2',
-
           title: 'Friends System',
-
           description:
             'Invite friends and create private multiplayer sessions.',
-
           completed: false,
         },
 
         {
           id: 'categories',
-
           version: 'v2',
-
           title: 'Question Categories',
-
           description: 'Support quizzes grouped by topic and difficulty.',
-
           completed: false,
         },
 
         {
           id: 'analytics',
-
           version: 'v3',
-
           title: 'Analytics Dashboard',
-
           description:
             'Visualize player statistics and historical performance.',
-
           completed: false,
         },
       ],
@@ -229,7 +190,18 @@ export const products: Products = {
         'Managing events manually becomes difficult as organizers need authentication, scheduling, categories, publishing workflows and administration.',
       solution:
         'Designed a scalable full-stack application with authentication, event management, media uploads and an administrative dashboard.',
-      technologies: [],
+      technologies: [
+        technologies.react,
+        technologies.typescript,
+        technologies.nodejs,
+        technologies.express,
+        technologies.socketio,
+        technologies.postgresql,
+        technologies.prisma,
+        technologies.zustand,
+        technologies.vercel,
+        technologies.render,
+      ],
       architecture: [],
       features: [],
       challenges: [],

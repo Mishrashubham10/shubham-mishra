@@ -45,7 +45,7 @@ export const quizBlitz: CaseStudy = {
     technologies.express,
     technologies.mongodb,
     technologies.reduxToolkit,
-    technologies.rtkQuery,
+    // technologies.rtkQuery,
     technologies.contextApi,
     technologies.jwt,
     technologies.git,

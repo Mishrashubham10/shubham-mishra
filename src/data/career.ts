@@ -31,7 +31,7 @@ export const career: Career = {
         technologies.express,
         technologies.mongodb,
         technologies.reduxToolkit,
-        technologies.rtkQuery,
+        // technologies.,
         technologies.contextApi,
         technologies.jwt,
         technologies.git,

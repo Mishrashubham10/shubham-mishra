@@ -13,6 +13,12 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  console.log('Project:', project.title);
+  console.log(project.technologies);
+  project.technologies.forEach((tech, index) => {
+    console.log(index, tech);
+  });
+
   return (
     <article className="group flex h-full flex-col rounded-2xl border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {/* Header */}

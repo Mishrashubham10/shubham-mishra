@@ -8,17 +8,6 @@ type ExperienceCardProps = {
 };
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
-  console.group(`Experience: ${experience.company}`);
-
-  console.log('Experience Object:', experience);
-  console.log('Technologies:', experience.technologies);
-
-  experience.technologies.forEach((technology, index) => {
-    console.log(`Technology ${index}:`, technology);
-  });
-
-  console.groupEnd();
-
   return (
     <article className="rounded-2xl border bg-card p-8 transition-colors hover:border-primary/30">
       {/* Header */}
@@ -78,7 +67,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           {experience.technologies.map((technology, index) => {
             if (!technology) {
               console.error(
-                `❌ Technology at index ${index} is undefined`,
+                `Technology at index ${index} is undefined`,
                 experience,
               );
 
