@@ -177,4 +177,27 @@ export const quizBlitz: CaseStudy = {
     github: '',
     live: '',
   },
+
+  metadata: [
+    {
+      id: 'status',
+      label: 'Status',
+      value: 'Completed',
+    },
+    {
+      id: 'platform',
+      label: 'Platform',
+      value: 'Web',
+    },
+    {
+      id: 'architecture',
+      label: 'Architecture',
+      value: 'Event Driven',
+    },
+    {
+      id: 'category',
+      label: 'Category',
+      value: 'Personal Project',
+    },
+  ],
 };

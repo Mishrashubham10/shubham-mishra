@@ -175,6 +175,29 @@ export const products: Products = {
             'Designed a server-authoritative scoring system with duplicate-answer prevention.',
         },
       ],
+
+      metadata: [
+        {
+          id: 'status',
+          label: 'Status',
+          value: 'Completed',
+        },
+        {
+          id: 'platform',
+          label: 'Platform',
+          value: 'Web',
+        },
+        {
+          id: 'architecture',
+          label: 'Architecture',
+          value: 'Event Driven',
+        },
+        {
+          id: 'category',
+          label: 'Category',
+          value: 'Personal Project',
+        },
+      ],
     },
 
     {
@@ -210,6 +233,28 @@ export const products: Products = {
       screenshots: [],
       links: {},
       outcomes: [],
+      metadata: [
+        {
+          id: 'status',
+          label: 'Status',
+          value: 'Completed',
+        },
+        {
+          id: 'platform',
+          label: 'Platform',
+          value: 'Web Application',
+        },
+        {
+          id: 'architecture',
+          label: 'Architecture',
+          value: 'REST API',
+        },
+        {
+          id: 'category',
+          label: 'Category',
+          value: 'Personal Project',
+        },
+      ],
     },
   ],
 };

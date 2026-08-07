@@ -2,9 +2,17 @@
 // Common
 // ========================================
 
+import { TechnologyId } from './technology';
+
 export type ExternalLink = {
   label: string;
   href: string;
+};
+
+export type ProjectMetadata = {
+  id: string;
+  label: string;
+  value: string;
 };
 
 export type Image = {
@@ -29,7 +37,7 @@ export enum TechnologyCategory {
 }
 
 export type Technology = {
-  id: string;
+  id: TechnologyId;
   name: string;
   category: TechnologyCategory;
   icon?: string;
@@ -127,7 +135,9 @@ export type Milestone = {
   completed: boolean;
 };
 
-export type Screenshot = Image;
+export type Screenshot = Image & {
+  featured?: boolean;
+};
 
 export type ProjectLink = {
   github?: string;
@@ -154,6 +164,7 @@ export type CaseStudy = {
   roadmap: Milestone[];
   screenshots: Screenshot[];
   links: ProjectLink;
+  metadata: ProjectMetadata[];
 };
 
 // ========================================
