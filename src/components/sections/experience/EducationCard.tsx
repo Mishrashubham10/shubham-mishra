@@ -1,6 +1,6 @@
 import { GraduationCap } from 'lucide-react';
 
-import type { Education } from '@/types/portfolio';
+import type { Education } from '@/types/domain';
 
 type EducationCardProps = {
   education: Education;

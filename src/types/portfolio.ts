@@ -104,6 +104,15 @@ export type Contact = {
   socials: SocialLink[];
 };
 
+// export type Education = {
+//   id: string;
+//   degree: string;
+//   institution: string;
+//   location?: string;
+//   startDate: string;
+//   endDate: string;
+// };
+
 // ========================================
 // Portfolio
 // ========================================
