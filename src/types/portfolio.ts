@@ -1,3 +1,11 @@
+import type {
+  Career,
+  CaseStudy,
+  EngineeringPrinciple,
+  LearningItem,
+  Technology,
+} from './domain';
+
 // ========================================
 // Portfolio Types
 // ========================================
@@ -118,14 +126,6 @@ export type Contact = {
 // ========================================
 // Portfolio
 // ========================================
-
-import type {
-  Career,
-  CaseStudy,
-  EngineeringPrinciple,
-  LearningItem,
-} from './domain';
-
 export type PortfolioData = {
   metadata: PortfolioMetadata;
   navigation: NavigationItem[];
@@ -138,4 +138,16 @@ export type PortfolioData = {
   engineering: EngineeringPrinciple[];
 
   contact: Contact;
+};
+
+export type EngineeringDomain = {
+  id: string;
+  title: string;
+  description: string;
+  technologies: Technology[];
+  relatedProjects: string[];
+};
+
+export type Engineering = {
+  domains: EngineeringDomain[];
 };
