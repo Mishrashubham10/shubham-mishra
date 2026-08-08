@@ -228,6 +228,12 @@ export type PortfolioMetadata = {
   author: string;
 };
 
+export type AboutContent = {
+  introduction: string;
+  philosophy: string;
+  currentFocus: string;
+};
+
 export type PortfolioProfile = {
   name: string;
   role: string;
@@ -235,6 +241,7 @@ export type PortfolioProfile = {
   summary: string;
   avatar: string;
   techStack: Technology[];
+  about: AboutContent;
 };
 
 export type PortfolioData = {

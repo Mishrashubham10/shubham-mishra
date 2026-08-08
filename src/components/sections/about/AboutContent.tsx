@@ -1,7 +1,7 @@
-import type { Profile } from '@/types/portfolio';
+import type { PortfolioProfile } from '@/types/domain';
 
 type AboutContentProps = {
-  profile: Profile;
+  profile: PortfolioProfile;
 };
 
 export function AboutContent({ profile }: AboutContentProps) {
