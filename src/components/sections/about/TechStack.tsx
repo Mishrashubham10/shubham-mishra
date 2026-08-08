@@ -1,4 +1,4 @@
-import type { TechCategory as TechCategoryType } from '@/types/portfolio';
+import type { TechCategory as TechCategoryType } from '@/types/domain';
 import { TechCategory } from './TechCategory';
 
 type TechStackProps = {
