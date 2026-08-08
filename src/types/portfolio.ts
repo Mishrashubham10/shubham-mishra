@@ -127,16 +127,13 @@ export type Contact = {
 // Portfolio
 // ========================================
 export type PortfolioData = {
-  metadata: PortfolioMetadata;
+  metadata: Metadata;
   navigation: NavigationItem[];
-
   profile: Profile;
-
   career: Career;
   projects: CaseStudy[];
-  learning: LearningItem[];
-  engineering: EngineeringPrinciple[];
-
+  learning: Learning;
+  engineering: Engineering;
   contact: Contact;
 };
 
@@ -146,6 +143,70 @@ export type EngineeringDomain = {
   description: string;
   technologies: Technology[];
   relatedProjects: string[];
+};
+
+export type LearningStatus = 'Learning' | 'Planned' | 'Completed';
+
+export type LearningResource = {
+  id: string;
+  title: string;
+  type: string;
+  href?: string;
+};
+
+export type LearningMilestone = {
+  id: string;
+  title: string;
+  description?: string;
+  completed?: boolean;
+};
+
+export type LearningDomain = {
+  id: string;
+  title: string;
+  description: string;
+  status: LearningStatus;
+  currentTopic: string;
+  progress: number;
+  completedMilestones: number;
+  totalMilestones: number;
+  roadmap: LearningMilestone[];
+  resources: LearningResource[];
+  lastUpdated: string;
+};
+
+export type LearningProject = {
+  id: string;
+  title: string;
+  description: string;
+  status: string;
+};
+
+export type LearningGoal = {
+  id: string;
+  title: string;
+  completed: boolean;
+};
+
+export type Metadata = {
+  title: string;
+  description: string;
+
+  version: string;
+  repository: string;
+
+  lastUpdated: string;
+  buildYear: number;
+  keywords: string[];
+};
+
+export type Learning = {
+  title: string;
+  description: string;
+  domains: LearningDomain[];
+  currentProjects: LearningProject[];
+  goals: LearningGoal[];
+  certifications: string[];
 };
 
 export type Engineering = {

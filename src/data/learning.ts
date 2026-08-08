@@ -9,23 +9,14 @@ export const learning: Learning = {
   domains: [
     {
       id: 'dsa',
-
       title: 'Data Structures & Algorithms',
-
       description: 'Practicing problem-solving patterns for coding interviews.',
-
       status: 'Learning',
-
       currentTopic: 'Sliding Window',
-
       progress: 35,
-
       completedMilestones: 18,
-
       totalMilestones: 50,
-
       roadmap: [],
-
       resources: [
         {
           id: 'leetcode',
@@ -44,25 +35,15 @@ export const learning: Learning = {
 
     {
       id: 'system-design',
-
       title: 'System Design',
-
       description: 'Learning scalable architectures and distributed systems.',
-
       status: 'Learning',
-
       currentTopic: 'Scalable Backend Systems',
-
       progress: 20,
-
       completedMilestones: 8,
-
       totalMilestones: 40,
-
       roadmap: [],
-
       resources: [],
-
       lastUpdated: '2026-07-16',
     },
 
