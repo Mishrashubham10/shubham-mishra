@@ -101,6 +101,8 @@ export type Contact = {
   email: string;
   phone?: string;
   location: string;
+  timezone: string;
+  preferredContact: string;
   socials: SocialLink[];
 };
 
