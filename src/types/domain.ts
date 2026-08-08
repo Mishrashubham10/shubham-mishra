@@ -67,7 +67,8 @@ export type CareerExperience = {
   id: string;
   company: string;
   role: string;
-  employmentType: EmploymentType;
+  // employmentType: EmploymentType;
+  employmentType: string;
   location: string;
   startDate: string;
   endDate: string | 'Present';

@@ -1,4 +1,4 @@
-import { Career } from '@/types/portfolio';
+import { Career } from '@/types/domain';
 import { technologies } from './technologies';
 
 export const career: Career = {
