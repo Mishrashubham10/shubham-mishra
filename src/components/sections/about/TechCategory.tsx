@@ -1,5 +1,5 @@
 import { Chip } from '@/components/common/Chip';
-import type { TechCategory as TechCategoryType } from '@/types/portfolio';
+import type { TechCategory as TechCategoryType } from '@/types/domain';
 
 type TechCategoryProps = {
   category: TechCategoryType;

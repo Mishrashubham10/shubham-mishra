@@ -36,6 +36,11 @@ export enum TechnologyCategory {
   Tools = 'Tools',
 }
 
+export type TechCategory = {
+  category: TechnologyCategory;
+  items: Technology[];
+};
+
 export type Technology = {
   id: TechnologyId;
   name: string;
