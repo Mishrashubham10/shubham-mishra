@@ -1,18 +1,18 @@
 import { Chip } from '@/components/common/Chip';
-import type { TechCategory as TechCategoryType } from '@/types/domain';
+import type { TechCategory } from '@/types/domain';
 
 type TechCategoryProps = {
-  category: TechCategoryType;
+  category: TechCategory;
 };
 
 export function TechCategory({ category }: TechCategoryProps) {
   return (
-    <div className="space-y-4">
-      <h3 className="font-semibold tracking-tight">{category.category}</h3>
+    <div className="space-y-3">
+      <h3 className="text-sm font-semibold">{category.category}</h3>
 
       <div className="flex flex-wrap gap-2">
         {category.items.map((tech) => (
-          <Chip key={tech.name}>{tech.name}</Chip>
+          <Chip key={tech.id}>{tech.name}</Chip>
         ))}
       </div>
     </div>
