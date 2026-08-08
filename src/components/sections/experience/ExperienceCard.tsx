@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 
-import { CareerExperience } from '@/types/portfolio';
+import { CareerExperience } from '@/types/domain';
 import { Chip } from '@/components/common/Chip';
 
 type ExperienceCardProps = {

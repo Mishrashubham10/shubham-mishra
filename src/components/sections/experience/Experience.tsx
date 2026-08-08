@@ -1,5 +1,5 @@
 import { Container, Section, SectionHeading } from '@/components/common';
-import { Career } from '@/types/portfolio';
+import { Career } from '@/types/domain';
 
 import ExperienceCard from './ExperienceCard';
 import EducationCard from './EducationCard';
