@@ -234,6 +234,7 @@ export type PortfolioProfile = {
   tagline: string;
   summary: string;
   avatar: string;
+  techStack: Technology[];
 };
 
 export type PortfolioData = {
