@@ -1,10 +1,12 @@
-import type { PortfolioProfile } from '@/types/domain';
+import type { Profile } from '@/types/portfolio';
 
 type AboutContentProps = {
-  profile: PortfolioProfile;
+  profile: Profile;
 };
 
-export function AboutContent({ profile }: AboutContentProps) {
+export function AboutContent({
+  profile,
+}: AboutContentProps) {
   return (
     <div className="space-y-8">
       <div>
@@ -16,7 +18,9 @@ export function AboutContent({ profile }: AboutContentProps) {
       </div>
 
       <div>
-        <h3 className="font-semibold">Engineering Philosophy</h3>
+        <h3 className="font-semibold">
+          Engineering Philosophy
+        </h3>
 
         <p className="mt-3 leading-8 text-muted-foreground">
           {profile.about.philosophy}

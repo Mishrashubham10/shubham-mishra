@@ -6,21 +6,18 @@ import { portfolio } from '@/data/portfolio';
 
 export default function Home() {
   return (
-    <main className="w-full py-16">
-      <Hero
-        profile={portfolio.profile}
-        products={portfolio.products}
-        learning={portfolio.learning}
-      />
+    <main>
+      {/* ============= HERO ============= */}
+      <Hero profile={portfolio.profile} projects={portfolio.projects} />
 
-      {/* ============= About Me Section ============= */}
+      {/* ============= ABOUT ME ============= */}
       <About profile={portfolio.profile} />
 
-      {/* ============= EXP SECTION ============= */}
+      {/* ============= EXPERIENCE ============= */}
       <Experience career={portfolio.career} />
 
-      {/* ============= PROJECT SECTION ============= */}
-      <Projects />
+      {/* ============= PROJECTS ============= */}
+      <Projects projects={portfolio.projects} />
     </main>
   );
 }

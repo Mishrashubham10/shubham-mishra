@@ -1,8 +1,10 @@
 import { ArrowRight, Download } from 'lucide-react';
 
-import type { Learning, Products, Profile } from '@/types/portfolio';
+import type { Profile } from '@/types/portfolio';
+import type { CaseStudy } from '@/types/domain';
 
 import { AppButton, Badge, Container, Section } from '@/components/common';
+
 import { HeroStats } from './HeroStats';
 
 import { DESIGN } from '@/constants/design';
@@ -10,23 +12,18 @@ import { cn } from '@/lib/utils';
 
 type HeroProps = {
   profile: Profile;
-  products: Products;
-  learning: Learning;
+  projects: CaseStudy[];
 };
 
-export function Hero({ profile, products, learning }: HeroProps) {
+export function Hero({ profile, projects }: HeroProps) {
   const stats = [
     {
       value: `${profile.yearsOfExperience}+`,
       label: 'Years Experience',
     },
     {
-      value: products.caseStudies.length,
+      value: projects.length,
       label: 'Case Studies',
-    },
-    {
-      value: learning.domains.length,
-      label: 'Learning Tracks',
     },
   ];
 
@@ -36,8 +33,8 @@ export function Hero({ profile, products, learning }: HeroProps) {
       className={cn(DESIGN.layout.hero, 'relative overflow-hidden')}
     >
       {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-137.5 w-137.5 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-1/2 top-0 size-150 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
       <Container>
@@ -58,7 +55,7 @@ export function Hero({ profile, products, learning }: HeroProps) {
           {/* Actions */}
           <div className="flex flex-wrap gap-4">
             <AppButton
-              href="#products"
+              href="#projects"
               endIcon={<ArrowRight className="size-4" />}
             >
               View Case Studies
@@ -66,7 +63,6 @@ export function Hero({ profile, products, learning }: HeroProps) {
 
             <AppButton
               href={profile.resumeUrl}
-              // target="_blank"
               rel="noopener noreferrer"
               variant="outline"
               startIcon={<Download className="size-4" />}

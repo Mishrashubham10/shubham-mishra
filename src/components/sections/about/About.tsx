@@ -1,21 +1,21 @@
 import { Container, Section, SectionHeading } from '@/components/common';
 
-import type { PortfolioProfile } from '@/types/domain';
+import type { Profile } from '@/types/portfolio';
 
 import { AboutContent } from './AboutContent';
 import { TechStack } from './TechStack';
 
 type AboutProps = {
-  profile: PortfolioProfile;
+  profile: Profile;
 };
 
 export function About({ profile }: AboutProps) {
   return (
-    <Section>
+    <Section id="about">
       <Container>
         <SectionHeading
           badge="About"
-          title="About Me"
+          title={profile.about.title}
           description="A little about my background, experience, and approach to building software."
         />
 

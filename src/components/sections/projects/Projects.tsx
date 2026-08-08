@@ -1,12 +1,16 @@
-import { Container } from '@/components/common/Container';
-import { Section } from '@/components/common/Section';
-import { SectionHeading } from '@/components/common/SectionHeading';
+import { Container, Section, SectionHeading } from '@/components/common';
 
-import { featuredProjects } from '@/data/projects';
+import type { CaseStudy } from '@/types/domain';
 
 import { ProjectCard } from './ProjectCard';
 
-export default function Projects() {
+type ProjectsProps = {
+  projects: CaseStudy[];
+};
+
+export function Projects({ projects }: ProjectsProps) {
+  const featuredProjects = projects.filter((project) => project.featured);
+
   if (!featuredProjects.length) {
     return null;
   }
@@ -15,9 +19,9 @@ export default function Projects() {
     <Section id="projects">
       <Container>
         <SectionHeading
-          badge="Projects"
-          title="Selected Engineering Work"
-          description="A collection of projects focused on solving real-world problems through scalable architecture, clean design, and modern web technologies."
+          badge="Selected Work"
+          title="Projects"
+          description="A selection of projects I've designed and built while exploring different areas of full-stack engineering."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">

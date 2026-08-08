@@ -1,8 +1,8 @@
 import { Chip } from '@/components/common/Chip';
-import type { TechCategory } from '@/types/domain';
+import type { ProfileTechCategory } from '@/types/portfolio';
 
 type TechCategoryProps = {
-  category: TechCategory;
+  category: ProfileTechCategory;
 };
 
 export function TechCategory({ category }: TechCategoryProps) {
@@ -12,7 +12,7 @@ export function TechCategory({ category }: TechCategoryProps) {
 
       <div className="flex flex-wrap gap-2">
         {category.items.map((tech) => (
-          <Chip key={tech.id}>{tech.name}</Chip>
+          <Chip key={tech.name}>{tech.name}</Chip>
         ))}
       </div>
     </div>
