@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
-import { portfolio } from '@/data/portfolio';
 import { AppButton, Container } from '@/components/common';
 import { Logo } from './Logo';
 import ThemeToggle from '@/components/ThemeToggle';
 import { MobileNav } from './MobileNav';
+
+import { portfolio } from '@/data/portfolio';
+import type { NavigationItem } from '@/types/domain';
 
 export default function Navbar() {
   return (
@@ -15,7 +17,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {portfolio.navigation.map((item) => (
+          {portfolio.navigation.map((item: NavigationItem) => (
             <Link
               key={item.id}
               href={item.href}
